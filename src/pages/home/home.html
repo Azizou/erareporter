@@ -4,14 +4,25 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+    <ion-list>
+        <ion-card ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+            <!-- <img src="img/nin-live.png"/> -->
+            <ion-card-content>
+              <!-- This could be from another table containing oinfo on the different db tables that the system support -->
+              <ion-card-title>
+                  {{item.text}}
+                </ion-card-title>
+              <p>
+                The most popular industrial group ever, and largely
+                responsible for bringing the music to a mass audience.
+              </p>
+            </ion-card-content>
+          </ion-card>
+
+
+        <!-- <button ion-item *ngFor="let item of items" (click)="itemSelected(item)">
+          {{ item.text }}
+        </button>   -->
+      </ion-list>
 </ion-content>
